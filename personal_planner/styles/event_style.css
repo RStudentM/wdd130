@@ -1,0 +1,236 @@
+li {
+  list-style: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+.calender-container {
+  display: grid;
+  grid-template-columns: 50px auto;
+  grid-template-rows: auto;
+  gap: 1px 1px;
+  grid-template-areas:
+    ". header"
+    "timeslots-container main";
+}
+.weekdays,
+.daynumbers {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.daynumbers {
+  min-height: 2em;
+}
+.weekdays {
+  background: lightslategray;
+}
+.header {
+  background: lightcoral;
+  grid-area: header;
+}
+
+.timeslots-container {
+  background: lightgray;
+  grid-area: timeslots-container;
+  justify-content: left;
+}
+.timeslots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.timeslots li {
+  min-height: 60px;
+}
+
+.timeslots li::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  width: 100%;
+  height: 1px;
+  background: lightgray;
+  z-index: 1;
+}
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(48, 1fr); /*18:25 ; Make sure math is correct*/
+  grid-area: main;
+  position: relative;
+}
+.slot {
+  position: absolute;
+  background: #add8e6;
+  opacity: 0.9;
+  border-radius: 5px;
+  z-index: 5;
+  color: black;
+  font-size: 15px;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+.slot:hover {
+  /*https://thebrandsmen.com/css-image-hover-effects/ This is where the effects can be found  */
+  box-shadow: 1px 1px #373737, 2px 2px #373737, 3px 3px #373737, 4px 4px #373737,
+    5px 5px #373737, 6px 6px #373737;
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
+  transition: 0.5s ease;
+}
+.slot-1 {
+  height: 60px; /*height is how long/hourly the event is. Every pixel is a minute*/
+  /*Equation for time, just change abs amount;  abs(9-10)=1 * 60 = 60 min
+  60/15 =  4 +1 = 5 (staring position) */
+  grid-row: 5; /*the position, or starting point of event. */
+
+  grid-column: 1; /* the day the event occurs */
+  width: 13%;
+}
+/*Adjust font sizes, event containers and colors to personal prefrence*/
+.slot-2 {
+  height: 60px;
+  width: 13%;
+  grid-row: 10;
+  grid-column: 1;
+}
+.slot-3 {
+  height: 60px;
+  width: 13%;
+  grid-row: 15;
+  grid-column: 1;
+  background: plum;
+}
+.slot-4 {
+  height: 60px;
+  width: 13%;
+  grid-row: 30;
+  grid-column: 1;
+}
+.slot-5 {
+  /*Tutoring*/
+  height: 60px;
+  width: 13%;
+  grid-row: 36;
+  grid-column: 1;
+  background: rgb(134, 182, 134);
+}
+.slot-6 {
+  /* Start of Tuesday */
+  height: 60px;
+  width: 15%;
+  grid-row: 5;
+  grid-column: 2;
+}
+.slot-7 {
+  height: 60px;
+  width: 15%;
+  grid-row: 15;
+  grid-column: 2;
+  background: goldenrod;
+}
+.slot-8 {
+  /* Open Spanish Lab; check length and overall text */
+  height: 120px;
+  width: 93%;
+  grid-row: 37;
+  grid-column: 1/6;
+  background: lightblue;
+  text-align: center;
+  z-index: 4;
+}
+.slot-9 {
+  /* Wednesday Classes; repeat of monday slots 1-3 . This one copies 1*/
+  height: 60px;
+  grid-row: 5;
+  grid-column: 3;
+  width: 18%;
+}
+.slot-10 {
+  height: 60px;
+  width: 18%;
+  grid-row: 10;
+  grid-column: 3;
+}
+.slot-11 {
+  height: 60px;
+  width: 18%;
+  grid-row: 15;
+  grid-column: 3;
+  background: plum;
+}
+.slot-12 {
+  /* Cello Lessons */
+  height: 60px;
+  width: 20%;
+  grid-row: 39;
+  grid-column: 4;
+  background: plum;
+}
+.slot-13 {
+  /* A repeat of Tuesday, copy slot 6 */
+  height: 60px;
+  width: 20%;
+  grid-row: 5;
+  grid-column: 4;
+}
+.slot-14 {
+  /* Friday classes, orchestra and tutoring */
+  height: 60px;
+  width: 26%;
+  grid-row: 15;
+  grid-column: 5;
+  background: plum;
+}
+.slot-15 {
+  height: 60px;
+  width: 26%;
+  grid-row: 43;
+  grid-column: 5;
+  background: rgb(134, 182, 134);
+}
+/* This Concludes the regular week, the following are Church activities\appointments and the weekend. */
+.slot-16 {
+  /* This is Indexing Night and Home Evening  */
+  height: 60px;
+  width: 18%;
+  grid-row: 43;
+  grid-column: 3;
+  background: goldenrod;
+}
+.slot-17 {
+  height: 70px;
+  width: 13%;
+  grid-row: 44;
+  grid-column: 1;
+  background: goldenrod;
+}
+/* The following is everything on Sunday */
+.slot-18 {
+  height: 120px;
+  width: 98%;
+  grid-row: 5;
+  grid-column: 7;
+  background: goldenrod;
+}
+.slot-19 {
+  height: 60px;
+  width: 98%;
+  grid-row: 21;
+  grid-column: 7;
+  background: pink;
+}
+.slot-20 {
+  /* This is for Stadium Singing */
+  height: 50px;
+  width: 98%;
+  grid-row: 46;
+  grid-column: 7;
+}
+.slot-21 {
+  height: 80px;
+  width: 98%;
+  grid-row: 33;
+  grid-column: 7;
+  background: goldenrod;
+}
