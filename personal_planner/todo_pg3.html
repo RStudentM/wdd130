@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
     <title>To Do list</title>
   </head>
   <body>
@@ -14,33 +15,59 @@
       <nav>
         <a href="index.html">Home - Calendar</a>
         <a href="agenda_pg2.html">Weekly Agenda</a>
-        <a href="todo_pg3.html">To-Do</a>
+        <a href="todo_pg3.html">Checklist</a>
       </nav>
     </header>
     <main>
-      <img src="images/agendatop.jpg" alt="top photo" />
+      <!-- https://www.w3schools.com/howto/howto_js_todolist.asp -->
       <h1>Checklist</h1>
-      <h3>Errands</h3>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+      <div id="myDIV" class="header">
+        <h2>To Do List</h2>
+        <input type="text" id="myInput" placeholder="Title..." />
+        <span onclick="newElement()" class="addBtn">Add</span>
+      </div>
+
+      <ul id="myUL">
+        <li>Work on WDD Final Paper</li>
+        <li class="checked">Temple Reccomend Interview</li>
+        <li>Pack Cello Mute for Concert</li>
+        <li>Buy eggs</li>
+        <li>Finish Way of Kings</li>
+        <li>Organize Closet</li>
       </ul>
-      <h3>Daily</h3>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-      <h3>Goals</h3>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
+
       <img src="images/todo-chores.jpg" alt="pots&pans" />
-      <img src="images/todo-overwhelming.jpg" alt="too many notes" />
+
+      <div id="myDIV" class="header">
+        <h2>Goals - Daily</h2>
+        <input type="text" id="myInput" placeholder="Title..." />
+        <span onclick="newElement()" class="addBtn">Add</span>
+      </div>
+
+      <ul id="myUL">
+        <li>Duolingo / Embark</li>
+        <li>BOM Reading 10pgs</li>
+        <li class="checked">Piano Hymn Practice</li>
+        <li>1hr Cello Practice</li>
+        <li>Learn a new hairstyle</li>
+      </ul>
+
       <img src="images/todo-notes.jpg" alt="self-improvement" />
+
+      <div id="myDIV" class="header">
+        <h2>Miscellaneous</h2>
+        <input type="text" id="myInput" placeholder="Title..." />
+        <span onclick="newElement()" class="addBtn">Add</span>
+      </div>
+
+      <ul id="myUL">
+        <li class="checked">Get Hallie Chocolate Chips</li>
+        <li>Start Packing</li>
+        <li>Secret Santa Gift</li>
+        <li>Mission Research</li>
+      </ul>
+
+      <img src="images/todo-overwhelming.jpg" alt="too many notes" />
       <p>
         "When performance is measured, performance improves. When performance is
         measured and reported, the rate of improvement accelerates." It’s a
