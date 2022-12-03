@@ -81,6 +81,7 @@ textarea {
   border-radius: 5px;
   border: 1px solid #ccc;
   box-shadow: 1px 1px 1px #999;
+  background: #e0777d;
   grid-column: 1/2;
   grid-row: 2/3;
 }
