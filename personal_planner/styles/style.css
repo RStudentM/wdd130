@@ -133,6 +133,9 @@ footer p {
   border: 5px #555;
 }
 /* CSS Specific to the to-do page (3) of my site */
+.pg3-grid img {
+  width: 50%;
+}
 * {
   box-sizing: border-box;
 }
