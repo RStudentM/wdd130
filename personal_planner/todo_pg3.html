@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/style.css" />
-    <title>To Do list</title>
+    <title>Checklist</title>
   </head>
   <body>
     <header>
@@ -65,20 +65,72 @@
         <li>Start Packing</li>
         <li>Secret Santa Gift</li>
         <li>Mission Research</li>
+        <li>Personal Practicum Project</li>
       </ul>
 
       <img src="images/todo-overwhelming.jpg" alt="too many notes" />
-      <p>
-        "When performance is measured, performance improves. When performance is
-        measured and reported, the rate of improvement accelerates." It’s a
-        place to observe behaviors/habits and work on improving or adapting
-        them. There is also another free section to change as desired, for tasks
-        or items that don’t fit into the lists above. An example of someone’s
-        daily agenda could be to finish an assignment for their Bio class, get
-        milk and eggs, organize their closet, practice the piano for 30 minutes,
-        etc. This page would help them organize everything in a presentable on
-        coherent manner.
-      </p>
+
+      <script>
+        // Create a "close" button and append it to each list item
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+          var span = document.createElement("SPAN");
+          var txt = document.createTextNode("\u00D7");
+          span.className = "close";
+          span.appendChild(txt);
+          myNodelist[i].appendChild(span);
+        }
+
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+          close[i].onclick = function () {
+            var div = this.parentElement;
+            div.style.display = "none";
+          };
+        }
+
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.querySelector("ul");
+        list.addEventListener(
+          "click",
+          function (ev) {
+            if (ev.target.tagName === "LI") {
+              ev.target.classList.toggle("checked");
+            }
+          },
+          false
+        );
+
+        // Create a new list item when clicking on the "Add" button
+        function newElement() {
+          var li = document.createElement("li");
+          var inputValue = document.getElementById("myInput").value;
+          var t = document.createTextNode(inputValue);
+          li.appendChild(t);
+          if (inputValue === "") {
+            alert("You must write something!");
+          } else {
+            document.getElementById("myUL").appendChild(li);
+          }
+          document.getElementById("myInput").value = "";
+
+          var span = document.createElement("SPAN");
+          var txt = document.createTextNode("\u00D7");
+          span.className = "close";
+          span.appendChild(txt);
+          li.appendChild(span);
+
+          for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+              var div = this.parentElement;
+              div.style.display = "none";
+            };
+          }
+        }
+      </script>
     </main>
     <footer>
       <p>BluePrint Life - Raquel Miller</p>

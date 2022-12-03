@@ -49,40 +49,98 @@ h2 {
   grid-row: 1/2;
   text-align: center;
 }
+#raquel {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
 #div {
   grid-column: 2/3;
   grid-row: 1/2;
   padding-left: 100px;
 }
 
-ul {
+#div ul {
   border: 10px solid black;
 }
 
-li {
+#div li {
   line-height: 94px;
   font-family: "Caveat", cursive;
   font-size: larger;
 }
+
+textarea {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  padding: 10px;
+  max-width: 100%;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
 footer {
   background-color: white;
   font-family: PT Sans Narrow, Helvetica, sans-serif;
   color: black;
+  padding: 20px 0;
 }
-
-/* CSS Specific to the to-do page of my site */
+.social-icons {
+  text-align: center;
+  padding-bottom: 10px;
+}
+social-icons > a {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  margin: 0 8px;
+}
+footer p {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 0;
+}
+.pg2-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  align-items: center;
+}
+.pg2-grid p {
+  grid-column: 2/3;
+  padding: 10px;
+}
+.pg2-grid img {
+  width: 100%;
+  padding: 20px;
+  border: 5px #555;
+}
+/* CSS Specific to the to-do page (3) of my site */
 * {
   box-sizing: border-box;
 }
 
 /* Remove margins and padding from the list */
-ul {
+#myUL {
   margin: 0;
   padding: 0;
 }
 
 /* Style the list items */
-ul li {
+#myUL li {
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
@@ -98,24 +156,24 @@ ul li {
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
+#myUL li:nth-child(odd) {
   background: #f9f9f9;
 }
 
 /* Darker background-color on hover */
-ul li:hover {
+#myUL li:hover {
   background: #ddd;
 }
 
 /* When clicked on, add a background color and strike out text */
-ul li.checked {
+#myUL li.checked {
   background: #888;
   color: #fff;
   text-decoration: line-through;
 }
 
 /* Add a "checked" mark when clicked on */
-ul li.checked::before {
+#myUL li.checked::before {
   content: "";
   position: absolute;
   border-color: #fff;
