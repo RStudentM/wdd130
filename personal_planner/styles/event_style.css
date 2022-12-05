@@ -5,6 +5,10 @@ ul {
   margin: 0;
   padding: 0;
 }
+.social-icons {
+  text-align: center;
+  padding-bottom: 10px;
+}
 .calender-container {
   display: grid;
   grid-template-columns: 50px auto;
