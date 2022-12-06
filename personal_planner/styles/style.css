@@ -125,15 +125,15 @@ footer p {
 }
 .pg2-grid {
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
-  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 .pg2-grid p {
   grid-column: 2/3;
   padding: 10px;
+  line-height: 100px;
 }
 .pg2-grid img {
   width: 100%;
-  padding: 20px;
+  height: 95%;
   border: 5px #555;
 }
